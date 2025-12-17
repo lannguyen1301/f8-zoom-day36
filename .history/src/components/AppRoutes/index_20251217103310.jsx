@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import {
+    HashRouter,
+    BrowserRouter as Router,
+    Routes,
+    Route,
+} from "react-router";
 
 // Layout
 import AdminLayout from "@layouts/AdminLayout";
@@ -36,6 +41,12 @@ function AppRoutes() {
                     <Route path="privacy" element={<Privacy />} />
                     {/* Default Layout */}
                 </Route>
+                {/* <Route element={<AdminLayout />}> */}
+                {/* <Route path="admin" element={<Dashboard />} />
+                    <Route path="admin/user" element={<User />} />
+                    <Route path="admin/setting" element={<Setting />} /> */}
+                {/* Admin Layout */}
+                {/* </Route> */}
 
                 <Route path="admin" element={<AdminLayout />}>
                     <Route index element={<Dashboard />} />
