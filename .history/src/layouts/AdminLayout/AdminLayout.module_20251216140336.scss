@@ -1,0 +1,66 @@
+.adminWrapper {
+    --primary-color: #000958;
+    --secondary-color: #ff5b2e;
+    --tertiary-color: #656689;
+    --c-gray-900: #000000;
+    --c-gray-800: #1f1f1f;
+    --c-gray-700: #2e2e2e;
+    --c-gray-600: #313131;
+    --c-gray-500: #969593;
+    --c-gray-400: #a6a6a6;
+    --c-gray-300: #bdbbb7;
+    --c-gray-200: #f1f1f1;
+    --c-gray-100: #ffffff;
+
+    --c-green-500: #45ffbc;
+    --c-olive-500: #e3ffa8;
+
+    --c-white: var(--c-gray-100);
+
+    --c-text-primary: var(--c-gray-100);
+    --c-text-secondary: var(--c-gray-200);
+    --c-text-tertiary: var(--c-gray-500);
+}
+
+.adminWrapper {
+    background: var(--c-gray-900);
+}
+
+.responsive-wrapper {
+    width: 100%;
+    // max-width: 1170px;
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+.adminWrapper .app {
+    min-height: 80vh;
+    margin: 0 auto;
+    width: 100%;
+    // max-width: calc(1170px - 0px);
+    background-color: var(--c-gray-800);
+    padding: 2vw 4vw 6vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.appBody {
+    height: 100%;
+    display: grid;
+    grid-template-columns:
+        minmax(min-content, 175px) minmax(max-content, 1fr)
+        minmax(min-content, 400px);
+    column-gap: 1rem;
+    padding-top: 2.5rem;
+}
+
+.appBodyNavigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+// .adminLayoutFooter {
+//     background: #000;
+// }

@@ -1,0 +1,25 @@
+.wrapper {
+    width: 100%;
+    // min-height: calc(100vh - 80px); // trừ chiều cao header
+    padding-top: 20px;
+}
+
+/* FLEX chứa sidebar + content */
+.inner {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    // max-width: 1200px;
+    // margin: 0 auto;
+}
+
+/* Sidebar cố định chiều rộng */
+.inner :global(.AuthSidebar) {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+/* Content chiếm toàn bộ phần còn lại */
+.content {
+    flex: 1;
+}

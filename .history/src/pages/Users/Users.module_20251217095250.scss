@@ -1,0 +1,131 @@
+.contentUsers {
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+    flex-grow: 1;
+}
+
+.usersTitle {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--c-text-primary);
+    margin-bottom: 30px;
+}
+
+.usersCardGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+}
+
+.usersCard {
+    box-shadow:
+        0 3px 3px 0 rgba(0, 0, 0, 0.05),
+        0 5px 15px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    border: 2px solid #fff;
+    flex-direction: column;
+    background: #5e6085;
+}
+
+.usersCardHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1.5rem 1.25rem 1rem 1.25rem;
+}
+
+.usersCardHeader {
+    .usersCardHeaderInner {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+.usersCardHeader {
+    & .usersCardHeaderInner {
+        .usersCardHeaderSpan {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.usersCardHeader {
+    & .usersCardHeaderInner {
+        & .usersCardHeaderSpan {
+            .usersCardHeaderImg {
+                max-height: 100%;
+            }
+        }
+    }
+}
+
+.usersCardHeader {
+    & .usersCardHeaderInner {
+        .usersCardHeaderTitle {
+            margin-top: 20px;
+            font-weight: 500;
+            font-size: 2rem;
+            color: var(--c-text-primary);
+        }
+    }
+}
+
+.usersCardHeaderImg {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.usersCardHeaderInner .usersCardHeaderImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.usersCardBody {
+    padding: 1rem 1.25rem;
+    font-size: 0.875rem;
+}
+
+.usersCardBodyDesc {
+    color: var(--c-text-primary);
+    text-align: center;
+}
+
+.usersCardFooter {
+    margin-top: auto;
+    padding: 1rem 1.25rem;
+    text-align: center;
+}
+
+.usersCardFooter {
+    a {
+        color: #404089;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.875rem;
+    }
+}
+
+.usersCardGrid {
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.usersCardGrid {
+    @media (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

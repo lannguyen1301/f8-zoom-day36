@@ -1,0 +1,315 @@
+.appBodyMainContent {
+    //
+}
+
+.appBodyMainContent section + section {
+    margin-top: 40px;
+}
+
+.serviceSection > h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    color: var(--c-text-primary);
+}
+
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.tile {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--c-olive-500);
+    color: var(--c-gray-900);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: 0.25s ease;
+}
+
+.tileHeader {
+    display: flex;
+    align-items: center;
+}
+
+.tileHeader i {
+    font-size: 2.5em;
+}
+
+.tileHeader h3 {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.375;
+    margin-left: 0.5rem 8px;
+}
+
+.tileHeader h3 span:first-child {
+    font-weight: 600;
+}
+.tileHeader h3 span:last-child {
+    font-size: 0.825em;
+    font-weight: 200;
+}
+
+.serviceSectionFooter {
+    color: var(--c-text-tertiary);
+    margin-top: 1rem;
+}
+
+.tile a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.tile a .iconButton {
+    color: inherit;
+    border-color: inherit;
+}
+
+.iconButton {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 0;
+    background-color: transparent;
+    border: 1px solid var(--c-gray-500);
+    color: var(--c-text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.25s ease;
+    flex-shrink: 0;
+}
+
+.tile a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.tile:nth-child(2) {
+    background-color: var(--c-green-500);
+}
+.tile:nth-child(3) {
+    background-color: var(--c-gray-300);
+}
+
+// Users
+
+// Setting
+.contentMain {
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+    flex-grow: 1;
+}
+
+.settingsTitle {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--c-text-primary);
+    margin-bottom: 30px;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+}
+
+.card {
+    box-shadow:
+        0 3px 3px 0 rgba(0, 0, 0, 0.05),
+        0 5px 15px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    border: 2px solid #fff;
+    flex-direction: column;
+    background: #a3a3a3;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1.5rem 1.25rem 1rem 1.25rem;
+}
+
+.cardHeader {
+    .cardHeaderInner {
+        display: flex;
+        align-items: center;
+    }
+}
+
+// .card-header div {
+//   display: flex;
+//   align-items: center;
+// }
+
+.cardHeader {
+    & .cardHeaderInner {
+        span {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+// .card-header div span {
+//   width: 40px;
+//   height: 40px;
+//   border-radius: 8px;
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+.cardHeader {
+    & .cardHeaderInner {
+        & span {
+            img {
+                max-height: 100%;
+            }
+        }
+    }
+}
+
+// .card-header div span img {
+//   max-height: 100%;
+// }
+
+.cardHeader {
+    & .cardHeaderInner {
+        .cardHeaderTitle {
+            margin-left: 0.75rem;
+            font-weight: 500;
+            color: var(--c-text-primary);
+        }
+    }
+}
+
+.toggle {
+}
+
+.toggle {
+    input {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+}
+
+// .toggle input {
+//   clip: rect(0 0 0 0);
+//   clip-path: inset(50%);
+//   height: 1px;
+//   overflow: hidden;
+//   position: absolute;
+//   white-space: nowrap;
+//   width: 1px;
+// }
+
+// .toggle {
+//     & input {
+//         &:checked + span {
+//             background-color: var(--c-accent-primary);
+//         }
+//     }
+// }
+
+.toggle input:checked + .cardHeaderSpan {
+    background-color: var(--c-accent-primary);
+}
+
+.toggle {
+    & input {
+        &:checked + span {
+            &:before {
+                transform: translateX(calc(100% - 2px));
+            }
+        }
+    }
+}
+
+// .toggle input:checked + span:before {
+//   transform: translateX(calc(100% - 2px));
+// }
+
+.toggle {
+    & span {
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            height: 18px;
+            width: 18px;
+            background-color: var(--c-background-primary);
+            border-radius: 50%;
+            box-shadow: 0 1px 3px 0 rgba(#000, 0.15);
+            transition: 0.15s ease;
+        }
+    }
+}
+
+.cardBody {
+    padding: 1rem 1.25rem;
+    font-size: 0.875rem;
+}
+
+.cardBody .cardBodyDesc {
+    color: var(--c-text-primary);
+}
+
+.cardFooter {
+    margin-top: auto;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-top: 1px solid var(--c-border-primary);
+}
+
+.cardFooter {
+    a {
+        color: #404089;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.875rem;
+    }
+}
+
+.cardGrid {
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.cardGrid {
+    @media (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

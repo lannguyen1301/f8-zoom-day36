@@ -1,0 +1,346 @@
+.wrapper {
+    margin: 0;
+    height: 100vh;
+    // background: #f5f7fa;
+    background: #000958;
+    font-family: "Segoe UI", Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    max-width: 1100px;
+    padding: 40px;
+    background: #ccc;
+    border-radius: 40px;
+}
+
+.text {
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: calc(100% / 2 - 50px);
+}
+
+.text h1 {
+    font-size: 120px;
+    margin: 0;
+    color: #2d3748;
+    font-weight: 800;
+}
+
+.text p {
+    font-size: 20px;
+    margin: 16px 0;
+    line-height: 1.5;
+}
+
+.btn {
+    display: inline-block;
+    padding: 20px 28px;
+    // background: #4299e1;
+    background: #ff5f34;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #3182ce;
+}
+
+/* === CHÚ CHÓ NGHỊCH NGỢM === */
+.scene {
+    position: relative;
+    width: 320px;
+    height: 300px;
+}
+
+.shelf {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 12px;
+    background: #a0aec0;
+    border-radius: 6px;
+}
+
+.vase {
+    position: absolute;
+    bottom: 80px;
+    left: 50px;
+    width: 90px;
+    height: 130px;
+    background: #d6bc9e;
+    border-radius: 45px 45px 15px 15px;
+    animation: tilt 3s infinite ease-in-out;
+}
+
+.vase::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 18px;
+    width: 54px;
+    height: 35px;
+    background: #d6bc9e;
+    border-radius: 50%;
+}
+
+.flower {
+    position: absolute;
+    top: -55px;
+    left: 28px;
+}
+
+.flower span {
+    position: absolute;
+    width: 34px;
+    height: 50px;
+    background: #e53e3e;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.flower span:nth-child(1) {
+    transform: rotate(-25deg) translateX(-8px);
+}
+.flower span:nth-child(2) {
+    transform: rotate(0deg);
+}
+.flower span:nth-child(3) {
+    transform: rotate(25deg) translateX(8px);
+}
+
+/* Chú chó */
+.dog {
+    position: absolute;
+    bottom: 90px;
+    right: 30px;
+    animation: bounce 3s infinite ease-in-out;
+}
+
+.head {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    background: white;
+    border: 5px solid #2d3748;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+.ear {
+    position: absolute;
+    top: -10px;
+    width: 40px;
+    height: 50px;
+    background: white;
+    border: 5px solid #2d3748;
+    border-radius: 50%;
+}
+
+.ear.left {
+    left: 10px;
+    transform: rotate(-20deg);
+    animation: ear-flap-left 2s infinite;
+}
+.ear.right {
+    right: 10px;
+    transform: rotate(20deg);
+    animation: ear-flap-right 2s infinite;
+}
+
+.eye {
+    position: absolute;
+    top: 30px;
+    width: 18px;
+    height: 22px;
+    background: #2d3748;
+    border-radius: 50%;
+    animation: blink 4s infinite;
+}
+
+.eye.left {
+    left: 20px;
+}
+.eye.right {
+    right: 20px;
+}
+
+.eye::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+}
+
+.nose {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 15px;
+    background: #f687b3;
+    border-radius: 50%;
+}
+
+.tongue {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 20px;
+    background: #ff9ec1;
+    border-radius: 0 0 15px 15px;
+    animation: tongue 3s infinite;
+}
+
+.body {
+    position: absolute;
+    top: 60px;
+    left: -20px;
+    width: 130px;
+    height: 90px;
+    background: white;
+    border: 5px solid #2d3748;
+    border-radius: 60px;
+}
+
+.paw {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: white;
+    border: 5px solid #2d3748;
+    border-radius: 50%;
+}
+
+.paw.front.left {
+    bottom: -15px;
+    left: 10px;
+    animation: push 3s infinite;
+}
+.paw.front.right {
+    bottom: -15px;
+    right: 40px;
+}
+.paw.back.left {
+    bottom: -20px;
+    left: -10px;
+}
+.paw.back.right {
+    bottom: -20px;
+    right: 20px;
+}
+
+.tail {
+    position: absolute;
+    top: 30px;
+    right: -30px;
+    width: 25px;
+    height: 90px;
+    background: #2d3748;
+    border-radius: 20px;
+    transform-origin: top center;
+    animation: wag 1.5s infinite ease-in-out;
+}
+
+/* Animation */
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+@keyframes push {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(15px);
+    }
+}
+
+@keyframes tilt {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(12deg);
+    }
+}
+
+@keyframes wag {
+    0%,
+    100% {
+        transform: rotate(30deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+}
+
+@keyframes ear-flap-left {
+    0%,
+    100% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(-40deg);
+    }
+}
+
+@keyframes ear-flap-right {
+    0%,
+    100% {
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(40deg);
+    }
+}
+
+@keyframes tongue {
+    0%,
+    100% {
+        height: 20px;
+    }
+    50% {
+        height: 28px;
+    }
+}
+
+@keyframes blink {
+    0%,
+    92%,
+    100% {
+        height: 22px;
+    }
+    95% {
+        height: 4px;
+    }
+}

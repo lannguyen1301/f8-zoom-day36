@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f4f6f8;
+}
+
+.menu {
+    width: 220px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 40px auto;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.menu li i {
+    font-size: 18px;
+    margin-right: 12px;
+    color: #6c63ff; /* tím nhẹ */
+}
+
+.menu li:hover {
+    background: #f0f0ff; /* tím nhạt khi hover */
+}
+
+.menu li.active {
+    background: #e0ddff; /* tím nhạt hơn khi được chọn */
+    font-weight: 600;
+}

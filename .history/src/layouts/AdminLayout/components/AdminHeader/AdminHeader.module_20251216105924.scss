@@ -1,0 +1,66 @@
+/* header */
+.appHeader {
+    display: grid;
+    grid-template-columns:
+        minmax(min-content, 175px) minmax(max-content, 1fr)
+        minmax(max-content, 400px);
+    column-gap: 4rem;
+    align-items: flex-end;
+}
+
+.appHeaderNavigation {
+    @media (max-width: 1170px) {
+        display: none;
+    }
+}
+
+.logoStyle {
+    background: #fff;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.appHeaderActions {
+    display: flex;
+    align-items: center;
+}
+
+.appHeaderActionsButtons {
+    display: flex;
+    border-left: 1px solid var(--c-gray-600);
+    margin-left: 2rem;
+    padding-left: 2rem;
+}
+
+.appHeaderActionsButtons > * + * {
+    margin-left: 1rem;
+}
+
+.appHeaderMobile {
+    display: none;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    color: var(--c-text-tertiary);
+    border-bottom: 1px solid var(--c-gray-600);
+}
+
+.tabs .navbarLink {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-decoration: none;
+    border-top: 2px solid transparent;
+    display: inline-flex;
+    transition: 0.25s ease;
+}
+
+.tabs .active,
+.tabs .navbarLink:hover,
+.tabs .navbarLink:focus {
+    color: var(--c-text-primary);
+    border-color: var(--c-text-primary);
+}

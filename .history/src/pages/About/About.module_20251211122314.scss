@@ -1,0 +1,165 @@
+/* Hero / About Section */
+.hero {
+    max-width: 1170px;
+    margin: 4rem auto;
+    // padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.heroText .heroTextTitle {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.heroText .heroTextDesc {
+    color: var(--gray);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.heroButtons a {
+    padding: 0.9rem 1.8rem;
+    border-radius: 50px;
+    margin-right: 1rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btnPrimary {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btnOutline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    margin-right: 0.8rem;
+}
+
+.stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.stat .statTitle {
+    font-size: 3rem;
+    color: var(--dark);
+}
+.stat .statDesc {
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+.heroImage {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Benefits section */
+.benefits {
+    background: var(--light);
+    padding: 6rem 0;
+}
+
+.benefits .containers {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.benefitsImage {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.benefitsList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.benefitItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+}
+
+.benefitItem i {
+    color: var(--primary);
+    font-size: 1.4rem;
+}
+
+/* Milestones */
+.milestones {
+    padding: 6rem 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.milestones h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.milestones p {
+    color: var(--gray);
+    margin-bottom: 4rem;
+    max-width: 600px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.cardIcon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+}
+
+@media (max-width: 968px) {
+    .hero,
+    .benefits .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .heroImage,
+    .benefitsImage {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .stats {
+        justify-content: center;
+    }
+}

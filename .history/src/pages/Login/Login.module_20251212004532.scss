@@ -1,0 +1,224 @@
+.container {
+    display: grid;
+    grid-template-columns: 480px 420px;
+    width: 900px;
+    height: 600px;
+    background: white;
+    border-radius: 28px;
+    // overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+/* Bên trái - Form Đăng nhập */
+.loginSide {
+    padding: 70px 60px;
+    background: white;
+    border-radius: 28px 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--primary);
+}
+
+.logo i {
+    font-size: 32px;
+}
+
+.loginSide h2 {
+    font-size: 34px;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.social a {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    display: grid;
+    place-items: center;
+    color: #64748b;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.social a:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.or {
+    text-align: center;
+    color: var(--gray);
+    margin: 25px 0;
+    font-size: 15px;
+}
+
+.InputGroup {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.InputGroup i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+    font-size: 18px;
+}
+
+.InputGroup input {
+    width: 100%;
+    padding: 18px 20px 18px 56px;
+    border: none;
+    background: #f8fafc;
+    border-radius: 14px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.InputGroup input:focus {
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(0, 196, 180, 0.2);
+}
+
+.forgot {
+    text-align: center;
+    margin: 20px 0 35px;
+}
+
+.forgot a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot a:hover {
+    text-decoration: underline;
+}
+
+.btnLogin {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btnLogin:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 196, 180, 0.4);
+}
+
+/* Bên phải - Hello Friend */
+.welcomeSide {
+    background: linear-gradient(135deg, #00d6c9 0%, #00a89b 100%);
+    color: white;
+    position: relative;
+    border-radius: 0 28px 28px 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px;
+}
+
+/* Hiệu ứng hình trang trí */
+.welcomeSide::before {
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    background: rgba(255, 255, 0, 0.15);
+    border-radius: 50%;
+    top: -150px;
+    right: -120px;
+}
+
+.welcomeSide::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    bottom: -80px;
+    left: -80px;
+    border-radius: 30px;
+}
+
+.welcomeSide h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+.welcomeSide p {
+    font-size: 17px;
+    opacity: 0.95;
+    margin-bottom: 50px;
+    line-height: 1.6;
+    z-index: 2;
+}
+
+.btnSignup {
+    background: transparent;
+    border: 2.5px solid white;
+    color: white;
+    padding: 16px 50px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.btnSignup:hover {
+    background: white;
+    color: var(--primary);
+    transform: translateY(-4px);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .container {
+        grid-template-columns: 1fr;
+        width: 420px;
+        height: auto;
+    }
+    .welcomeSide {
+        border-radius: 0 0 28px 28px;
+        padding: 60px 40px;
+    }
+}

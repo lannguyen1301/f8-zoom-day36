@@ -1,0 +1,250 @@
+.hero {
+    margin-top: 74px;
+}
+
+.container {
+    width: 1170px;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
+}
+
+.heroInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 120px;
+}
+
+.heroMedia {
+    position: relative;
+    display: flex;
+    padding-bottom: 94px;
+}
+
+.heroImgWrap {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 388px;
+    height: 488px;
+    background-color: #fe997b;
+    border-radius: 16px;
+    border: 3px solid #fff;
+}
+
+.heroImg {
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+}
+
+.heroDecor {
+    position: absolute;
+    z-index: -1;
+}
+
+.heroDecorLeft {
+    left: -58px;
+    bottom: 10px;
+}
+
+.heroDecorRight {
+    top: 16px;
+    right: -43px;
+}
+
+.heroImgWrapSmall {
+    align-self: self-end;
+    width: 186px;
+    height: 244px;
+    margin: 0 0 -58px -24px;
+    border: 2px solid #f7dddf;
+    background: #faa7ad;
+}
+
+.hero__img-small {
+}
+
+.heroList {
+    position: absolute;
+    left: 129px;
+    bottom: 0px;
+    width: 250px;
+    height: 156px;
+    padding: 18px 14px;
+    background-color: #fff;
+    box-shadow: -17px 14px 68px -4px rgba(207, 174, 132, 0.25);
+    border-radius: 10px;
+}
+
+.heroListItem {
+    display: flex;
+}
+
+.heroListItemThumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: #fec23f;
+}
+
+.heroListItemInfo {
+    margin-left: 10px;
+}
+
+.heroListItemTitle {
+    font-family: Sora, sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: #181e52;
+}
+
+.heroListItemSkeleton {
+    margin-top: 6px;
+    width: var(--width, 118px);
+    height: 4px;
+    background-color: var(--primary-color);
+    opacity: 0.8;
+    border-radius: 10px;
+}
+
+.heroListItemSeparate {
+    width: 100%;
+    height: 2px;
+    margin: 20px 0;
+    background-color: #f2f2f2;
+    border-radius: 99px;
+}
+
+.heroListItem {
+    display: flex;
+}
+
+.heroContent {
+}
+
+.heroHeading {
+    font-weight: 800;
+    font-size: 6.6rem;
+    line-height: 1.16;
+    color: var(--primary-color);
+}
+
+.heroDesc {
+    width: 390px;
+    margin-top: 24px;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.87;
+    color: var(--tertiary-color);
+}
+
+.heroRow {
+    display: flex;
+    align-items: center;
+    margin-top: 38px;
+}
+
+.heroCtaBtn {
+    --height: 60px;
+    min-width: 190px;
+    font-size: 1.6rem;
+    box-shadow: 0px 13px 26px -8px rgba(255, 91, 46, 0.42);
+}
+
+.heroCtaLink {
+    margin-left: 24px;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1;
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+.service {
+    margin-top: 190px;
+    padding: 68px 0 100px;
+    background-color: #fff6ed;
+}
+
+.serviceTop {
+    text-align: center;
+}
+
+.serviceDesc {
+    margin-bottom: 15px;
+    font-family: Sora, sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: #5e6085;
+}
+
+.serviceBody {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 65px;
+    margin-top: 70px;
+}
+
+.serviceItem {
+    width: 294px;
+    padding: 30px;
+    background-color: #fff;
+    border: 2px solid rgba(255, 188, 122, 0.26);
+    border-radius: 10px;
+}
+
+.serviceItem + .serviceItem {
+    margin-top: 24px;
+}
+
+.serviceItemHeading {
+    position: relative;
+    padding-left: 12px;
+    font-weight: 600;
+    font-size: 2.2rem;
+    line-height: 1;
+    color: var(--primary-color);
+}
+
+.serviceItemHeading::before {
+    position: absolute;
+    inset: 0 auto 0 0;
+    content: "";
+    display: inline-block;
+    width: 2px;
+    /* height: 22px; */
+    border-radius: 1px;
+    background: linear-gradient(#ff5b2e, #ffa187);
+}
+
+.serviceItemDesc {
+    margin-top: 18px;
+    font-size: 1.4rem;
+    line-height: 1.71;
+    color: var(--tertiary-color);
+}
+
+.serviceItemMore {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 24px;
+    font-family: Sora, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: #34396a;
+}
+
+.serviceItemMorel::after {
+    content: url("/icon/arrow-up-right.svg");
+    margin: 1px 0 0 5px;
+}
+
+.serviceMedia {
+    position: relative;
+    margin-top: 18px;
+}

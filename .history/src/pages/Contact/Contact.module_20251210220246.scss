@@ -1,0 +1,52 @@
+.contactInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // flex-wrap: wrap;
+    gap: 20px;
+    background: #fafafa;
+    border-radius: 20px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+.contactWrapperLeft {
+    // width: 50%;
+    width: calc(100% / 2 - 10px);
+}
+.contactTitle {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.labelEmail {
+    font-size: 1.4rem;
+}
+
+.contactDesc {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.socialLabel {
+    //
+}
+
+.socialGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactWrapperRight {
+    // width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.InputTextArea {
+    width: 100%;
+    max-width: 200px;
+}

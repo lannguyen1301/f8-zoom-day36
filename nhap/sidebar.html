@@ -1,0 +1,302 @@
+<!-- top navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-xs fixed-top">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-sidebar">
+      <span class="navbar-toggler-icon" data-bs-target="#offcanvas-sidebar"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <div class="brand-title">Examination</div>
+      <div class="brand-subtitle">Examination Online Platform</div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link top-nav-link active d-inline-flex align-items-center" aria-current="page" href="#">
+            <span class="top-nav-icon p-2"><i class="las la-globe"></i>
+              <span class="ms-2">en</span>
+            </span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link top-nav-link h-100" href="#">Visit Site</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link top-nav-link h-100" href="#">
+            <i class="las la-user-circle"></i>
+            Hi ! Admin
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link top-nav-link h-100" href="#">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- top navigation -->
+<!-- offcanvas -->
+<div class="offcanvas offcanvas-start bg-white text-white border-0 mt-navbar-adjust" tabindex="-1" id="offcanvas-sidebar">
+  <div class="offcanvas-body p-0" id="sidebar-links-body">
+    <div class="d-flex px-3 align-items-center">
+      <div class="sidebar_image_icon">
+        <i class="las la-user-circle"></i>
+      </div>
+      <div class="w-100">
+        <div class="text-violet fw-bold">Admin</div>
+        <div class="small text-violet d-flex align-items-center">
+          <div class="status-dot online"></div>
+          Online
+        </div>
+      </div>
+    </div>
+    <div class="text-uppercase text-violet p-3 small border-bottom">
+      Main Navigation
+    </div>
+
+    <!--  links -->
+    <ul class="p-0 m-0 sidebar-links">
+      <li>
+        <a href="#" class="nav-link sidebar-link">
+          <span class="icon">
+            <i class="las la-paste"></i>
+          </span>
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link sidebar-link">
+          <span class="icon">
+            <i class="lar la-user-circle"></i>
+          </span>
+          Users
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link sidebar-link">
+          <span class="icon">
+            <i class="lar la-copy"></i>
+          </span>
+          Categories
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link sidebar-link">
+          <span class="icon">
+            <i class="lar la-handshake"></i>
+          </span>
+          Courses
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link sidebar-link">
+          <span class="icon"><i class="lab la-first-order"></i></span>
+          Orders
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link sidebar-link">
+          <span class="icon">
+            <i class="las la-pager"></i>
+          </span>
+          Pages
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link sidebar-link">
+          <span class="icon">
+            <i class="lar la-newspaper"></i>
+          </span>
+          Courses
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link sidebar-link">
+          <span class="icon">
+            <i class="lar la-paper-plane"></i>
+          </span>
+          Push Notifications
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link sidebar-link">
+          <span class="icon"> <i class="las la-university"></i> </span>
+          Institutes
+        </a>
+      </li>
+    </ul>
+
+    <!--   links   -->
+  </div>
+</div>
+<!-- offcanvas -->
+
+<!-- ----------------------- -->
+<a href="https://codepen.io/chandrashekhar" target="_blank" class="pens_link">
+  <i class="fa-brands fa-codepen"></i>
+</a>
+<!-- ----------------------- -->
+
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+:root {
+  --violet: #5b4f90;
+  --gray-light: #eff2f6;
+  --top-navbar-height: 90px;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  background-color: #eff2f6;
+}
+
+/* offcanvas and navbar */
+
+.offcanvas {
+  width: 270px;
+}
+
+/* navigation */
+.top-nav-icon {
+  border-radius: 400px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 4px;
+  background-color: #eff2f6;
+}
+.sidebar-link,
+.top-nav-link {
+  color: var(--violet) !important;
+  display: inline-flex;
+  align-items: center;
+}
+.sidebar-link {
+  display: flex;
+}
+.sidebar-link:hover {
+  background-color: var(--gray-light);
+}
+
+.sidebar_image_icon {
+  font-size: 3rem;
+  margin-right: 0.5rem;
+  color: var(--violet);
+}
+.status-dot.online {
+  background-color: #0ca940;
+}
+.status-dot {
+  margin-right: 4px;
+  height: 10px;
+  display: inline-block;
+  width: 10px;
+  border-radius: 400px;
+}
+
+.sidebar-link .icon {
+  font-size: 1.5rem;
+  margin-right: 0.25rem;
+}
+.top-nav-profile-pic {
+  height: 36px;
+  width: 36px;
+  border-radius: 4000px;
+  object-fit: contain;
+  margin-right: 4px;
+}
+.brand-title {
+  font-weight: 700;
+  color: var(--violet);
+  font-size: 1.8rem;
+}
+.brand-subtitle {
+  font-size: 0.85rem;
+  color: var(--violet);
+}
+.sidebar-links {
+  position: relative;
+  overflow: hidden;
+}
+
+.text-violet {
+  color: var(--violet);
+}
+main {
+  margin-top: 90px;
+}
+
+.border-violet {
+  border-color: var(--violet);
+}
+.border-top-thick {
+  border-top: 0.2rem solid var(--violet);
+}
+.btn-outline-violet {
+  border-color: var(--violet);
+  color: var(--violet);
+}
+@media (min-width: 992px) {
+  body {
+    overflow: auto !important;
+  }
+  .mt-navbar-adjust {
+    height: calc(100% - var(--top-navbar-height));
+    margin-top: var(--top-navbar-height);
+  }
+  main {
+    margin-left: 270px;
+  }
+  .offcanvas-backdrop::before {
+    display: none;
+  }
+  .offcanvas {
+    transform: none;
+    visibility: visible !important;
+    transition: none !important;
+  }
+  .offcanvas-header {
+    display: none;
+  }
+}
+
+/********************************/
+.pens_link {
+  position: fixed;
+  bottom: 56px;
+  right: 56px;
+  margin: auto;
+  display: inline-flex;
+  font-size: 2rem;
+  text-decoration: none;
+  border-radius: 500px;
+  background-color: #212121;
+  color: #ffffff;
+  height: 56px;
+  width: 56px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: animate 1500ms ease infinite;
+  @keyframes animate {
+    0%,
+    100% {
+      transform: translatey(-10%);
+    }
+    50% {
+      transform: translatey(10%);
+    }
+  }
+}
+
+/*******************************/
+
+
+
+const ps = new PerfectScrollbar("#sidebar-links-body", {
+  wheelSpeed: 2,
+  wheelPropagation: true,
+  minScrollbarLength: 20
+});

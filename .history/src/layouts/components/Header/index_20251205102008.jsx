@@ -1,0 +1,21 @@
+import clsx from "clsx";
+import styles from "./Header.module.scss";
+import Logo from "@ui/Logo";
+import Div from "@ui/Div";
+import Navigation from "@layouts/components/Navigation";
+import Actions from "@layouts/components/Actions";
+//
+// import LogoImg from "../../public/logo.png";
+function Header() {
+    return (
+        <header className={styles.header}>
+            <Div className={styles.container}>
+                <Logo src="/logo.png" alt="LogoImg" className="" />
+                <Navigation />
+                <Actions />
+            </Div>
+        </header>
+    );
+}
+
+export default Header;

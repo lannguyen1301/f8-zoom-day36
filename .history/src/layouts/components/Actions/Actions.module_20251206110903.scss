@@ -1,0 +1,40 @@
+.headerAction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.headerActionBtn,
+.headerActionLink {
+    padding: 8px 18px;
+    font-weight: 500;
+    // font-size: 1.4rem;
+    // font-size: 1.4rem;
+    line-height: 1;
+    color: #5e6085;
+}
+
+.headerActionLink,
+.headerActionBtn {
+    --height: 40px;
+    min-width: 118px;
+    border: none;
+    border-radius: 0;
+    font-weight: normal;
+}
+
+.headerActionLink:hover {
+    background-color: rgba(0, 9, 88, 0.05);
+    border-radius: 999px;
+    transition: background-color 0.3s ease;
+}
+
+.headerActionBtn:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-color: currentColor;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}

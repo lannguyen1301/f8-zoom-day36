@@ -1,0 +1,50 @@
+.navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--c-text-tertiary);
+}
+
+/* UL chuẩn semantic */
+.navigation ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+/* Khoảng cách giữa các mục */
+.navigation li + li {
+    margin-top: 1.25rem;
+}
+
+/* Link trong sidebar */
+.navigation .sidebarActionLink {
+    display: flex;
+    align-items: center;
+    transition: 0.25s ease;
+    color: inherit;
+}
+
+.navigation .sidebarActionLink * {
+    transition: 0.25s ease;
+}
+
+.navigation .active i,
+.navigation .sidebarActionLink i {
+    margin-right: 0.75rem;
+    font-size: 1.25em;
+    flex-shrink: 0;
+}
+
+/* Hover / focus: dịch nhẹ sang phải và đổi màu */
+.navigation .sidebarActionLink:hover,
+.navigation .sidebarActionLink:focus,
+.navigation .sidebarActionLink:focus-visible {
+    transform: translateX(4px);
+    color: var(--c-text-primary);
+}
+
+.active {
+    transform: translateX(4px);
+    color: var(--c-text-primary);
+}

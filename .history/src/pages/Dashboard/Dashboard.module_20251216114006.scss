@@ -1,0 +1,25 @@
+.serviceSection > h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.service-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.service-section-header > * + * {
+    margin-left: 1.25rem;
+}
+
+@media (max-width: 1000px) {
+    .service-section-header {
+        display: none;
+    }
+}
+
+.service-section-footer {
+    color: var(--c-text-tertiary);
+    margin-top: 1rem;
+}

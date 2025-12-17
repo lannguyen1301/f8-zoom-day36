@@ -1,0 +1,129 @@
+.container {
+    width: 1170px;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 900;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.productList {
+    display: flex;
+    // align-items: stretch;
+    // align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 1.5rem;
+}
+
+.blogPost {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // width: 200px;
+    width: 30%;
+    // max-width: 250px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.containerCopy {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.containerCopy .subSectionTitle {
+    margin: 0 0 0.5rem 0;
+    color: #999;
+    font-size: 1.25rem;
+}
+
+.containerCopy .subTitle {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
+    color: #333;
+}
+
+.containerCopy .paraPost {
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+    line-height: 1.45;
+    color: #333;
+}
+
+.btnPrimary {
+    border: none;
+    outline: none;
+    background: linear-gradient(90deg, #ff9966, #ff5e62);
+    padding: 1.5rem 2rem;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 1px 10px 2rem rgba(255, 94, 98, 0.5);
+    transition: all 0.2s ease-in;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.btnPrimary:hover {
+    box-shadow: 0px 5px 1rem rgba(255, 94, 98, 0.5);
+}
+
+.pagination {
+    margin-top: 30px;
+}
+
+// tách sang pagination
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginationList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.paginationItem {
+    /* Layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    /* Box model */
+    width: 50px;
+    height: 50px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    background: #fff;
+
+    /* Typography */
+    color: #333;
+    font-size: 1.6rem;
+}
+
+.paginationItemActive {
+    color: #fff;
+    background: #333;
+}
+
+.paginationItem:hover {
+    cursor: pointer;
+}

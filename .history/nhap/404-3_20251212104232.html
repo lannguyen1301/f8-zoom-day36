@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Lạc Đường Rồi!</title>
+    <style>
+        :root {
+            --primary-color: #ff9900;
+            /* Màu cam vui vẻ */
+            --text-color: #333;
+            --bg-color: #f0f8ff;
+            /* Màu xanh nhạt */
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow: hidden;
+            /* Giữ mọi thứ trong viewport */
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 8em;
+            color: var(--primary-color);
+            margin-bottom: 0;
+            animation: shake 0.5s infinite alternate;
+            /* Hiệu ứng rung nhẹ */
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        .dog-image {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 50%;
+            /* Làm hình tròn cho dễ thương */
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            /* Thay thế đường dẫn này bằng ảnh của bạn */
+            background-image: url('../../f8-zoom-day36/public/images/dog-7011.gif');
+            background-size: cover;
+            background-position: center;
+            animation: bounce 2s infinite ease-in-out;
+            /* Hiệu ứng nảy nhẹ */
+        }
+
+        /* Hiệu ứng nảy (Dùng cho hình ảnh) */
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* Hiệu ứng rung nhẹ (Dùng cho số 404) */
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(5px) rotate(2deg);
+            }
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #e68a00;
+            /* Màu đậm hơn khi di chuột */
+            transform: scale(1.05);
+            /* Phóng to nhẹ */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <div class="dog-image"></div>
+        <h2>Ối! Chú chó đã ăn mất trang này rồi!</h2>
+        <p>Có vẻ như trang bạn đang tìm không còn ở đây nữa. Chú chó tinh nghịch này đã cắn đứt đường link rồi!</p>
+        <a href="/" class="back-button">Quay về Trang Chủ An Toàn</a>
+    </div>
+</body>
+
+</html>

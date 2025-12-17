@@ -1,0 +1,195 @@
+# ✅ Checklist F8 – Zoom Day 36 (React + Layout + Router + API)
+
+---
+
+## ✔️ 0. YÊU CẦU CHUNG
+
+- [x] Tạo repo `f8-zoom-day36` trên GitHub
+- [x] Khởi tạo Vite + React + SWC  
+       👉 Chạy:  
+       `    npm create vite@latest f8-zoom-day36 -- --template react-swc
+cd f8-zoom-day36 && npm install`
+- [x] Cài React Router  
+       👉 `npm install react-router-dom`
+- [x] Quyết định dùng CSS/SCSS Modules
+- [x] Cài Sass (nếu dùng SCSS):  
+       👉 `npm install -D sass`
+- [ ] Mục tiêu:
+    - Multiple layouts
+    - Nested routes
+    - API fetching
+    - useState / useEffect / useParams / useSearchParams / useNavigate / useLocation
+
+---
+
+## ✔️ 1. SETUP MULTIPLE LAYOUTS
+
+### 1.1. Cấu trúc thư mục
+
+- [x] Tạo thư mục `src/layouts/`
+- [ ] Tạo Header chung  
+       `src/layouts/components/Header/index.jsx`  
+       `src/layouts/components/Header/Header.module.scss`
+
+- [ ] Tạo DefaultLayout  
+       - index.jsx  
+       - DefaultLayout.module.scss  
+       - components/Footer/
+
+- [ ] Tạo AuthLayout  
+       - index.jsx  
+       - AuthLayout.module.scss  
+       - components/AuthSidebar/
+
+- [ ] Tạo AdminLayout  
+       - index.jsx  
+       - AdminLayout.module.scss  
+       - components/AdminSidebar/  
+       - components/AdminFooter/
+
+- [ ] Tạo pages:  
+       Home, About, Posts, PostDetail, Login, Register, Dashboard, Users, Settings, Contact, Privacy, NotFound  
+       → Mỗi page có `index.jsx` + `*.module.scss`
+
+- [ ] Tạo components chung:
+    - [ ] `components/AppRoutes/`
+    - [ ] `components/ScrollToTop/`
+    - [x] `components/Loading/`
+    - [ ] `components/Pagination/`
+
+---
+
+### 1.2. Cấu hình Layouts
+
+#### DefaultLayout
+
+- [ ] Import Header
+- [ ] Import Footer riêng
+- [ ] Dùng `<Outlet />`
+- [ ] Áp dụng cho:
+    - [ ] `/`
+    - [ ] `/about`
+    - [ ] `/posts`
+    - [ ] `/posts/:id`
+    - [ ] `/contact`
+    - [ ] `/privacy`
+
+#### AuthLayout
+
+- [ ] Import Header chung
+- [ ] Import AuthSidebar
+- [ ] Outlet
+- [ ] Áp dụng:
+    - [ ] `/login`
+    - [ ] `/register`
+
+#### AdminLayout
+
+- [ ] Header riêng
+- [ ] AdminSidebar
+- [ ] AdminFooter
+- [ ] Outlet
+- [ ] Route:
+    - [ ] `/admin`
+    - [ ] `/admin/users`
+    - [ ] `/admin/settings`
+
+#### NotFound Page
+
+- [ ] Tạo page riêng, không dùng layout
+- [ ] Có nút quay về Home
+
+---
+
+### 1.3. Cấu hình Routes
+
+- [ ] Trong `AppRoutes/index.jsx`, import:
+
+_(Nếu deploy GitHub Pages sẽ đổi sang HashRouter)_
+
+- [ ] Setup toàn bộ hệ thống route theo layout
+
+- [ ] Thêm Route `*` cho NotFound
+
+---
+
+## ✔️ 2. POSTS LIST + PAGINATION + API
+
+### 2.1. Posts Page
+
+- [ ] Tạo state: posts, isLoading, error
+- [ ] Dùng `useSearchParams`
+- [ ] Lấy page từ URL (?page=1)
+- [ ] Fetch API `https://jsonplaceholder.typicode.com/posts`
+- [ ] Tính totalPages
+- [ ] Cắt mảng theo page
+- [ ] Loading: `<Loading />`
+- [ ] Render danh sách 20 posts
+
+### 2.2. Pagination Component
+
+- [ ] Nhận props: `currentPage`, `totalPages`, `onPageChange`
+- [ ] Render First / Prev / Next / Last
+- [ ] Disable khi ở đầu hoặc cuối
+- [ ] Active page có style riêng
+- [ ] Khi nhấn số trang → gọi `onPageChange(page)`
+- [ ] Ở Posts page → dùng `setSearchParams({ page })`
+
+---
+
+## ✔️ 3. POST DETAIL + COMMENTS
+
+- [ ] Dùng `useParams` lấy id
+- [ ] State: post, comments, isLoading, error
+- [ ] Gọi:
+    - [ ] `/posts/:id`
+    - [ ] `/posts/:id/comments`
+- [ ] Nếu 404 → `navigate("/posts", { replace: true })`
+- [ ] Render:
+    - [ ] Loading
+    - [ ] title, body
+    - [ ] comments list
+
+---
+
+## ✔️ 4. SCROLL TO TOP
+
+- [ ] Tạo `components/ScrollToTop/index.js`
+- [ ] Dùng useLocation + useEffect
+- [ ] Đặt vào trong Router, trên Routes
+
+---
+
+## ✔️ 5. CONTACT & PRIVACY PAGES
+
+- [ ] Viết nội dung dài để test scroll
+- [ ] Footer có link tới Contact, Privacy
+- [ ] Kiểm tra scroll-to-top khi chuyển trang
+
+---
+
+## ✔️ 6. DEPLOY GITHUB PAGES
+
+- [ ] Cài gh-pages  
+       👉 `npm install gh-pages --save-dev`
+- [ ] Thêm `"homepage"` vào package.json
+- [ ] Thêm script:
+
+- [ ] Đổi BrowserRouter → HashRouter
+- [ ] Chạy:
+    - [ ] `npm run build`
+    - [ ] `npm run deploy`
+- [ ] Kiểm tra branch gh-pages và Pages settings
+
+---
+
+## ✔️ 7. TỰ CHECK LẠI TRƯỚC KHI NỘP
+
+- [ ] Layouts chạy đúng
+- [ ] Routes đúng cấu trúc
+- [ ] API fetch OK
+- [ ] Pagination đúng logic
+- [ ] ScrollToTop hoạt động
+- [ ] 404 hoạt động
+- [ ] Code sạch, tách component
+- [ ] Comment rõ logic phức tạp

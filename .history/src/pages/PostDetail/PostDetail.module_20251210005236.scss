@@ -1,0 +1,24 @@
+.postDetail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.titleDetail {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.paraDetail {
+    font-size: 1.8rem;
+}
+
+// comment
+.postComment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

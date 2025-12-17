@@ -1,0 +1,33 @@
+.contactInner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ##fafafa;
+    border-radius: 20px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+.contactTitle {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.labelEmail {
+    font-size: 1.4rem;
+}
+
+.contactDesc {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.socialLabel {
+    //
+}
+
+.socialGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

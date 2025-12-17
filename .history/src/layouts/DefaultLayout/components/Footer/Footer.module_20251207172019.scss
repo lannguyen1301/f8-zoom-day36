@@ -1,0 +1,18 @@
+.footer {
+    margin-top: 52px;
+    background: linear-gradient(to right, #fff6ed 43%, transparent 42%);
+}
+
+.footerInner {
+    display: flex;
+}
+
+.footerLeft {
+    padding: 114px 0 148px;
+    width: 42%;
+}
+
+.footerRight {
+    flex: 1px;
+    padding: 52px 0 48px 0;
+}

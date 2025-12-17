@@ -1,0 +1,37 @@
+.hero {
+    margin-top: 74px;
+}
+
+.container {
+    width: 1170px;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
+}
+
+.heroInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 120px;
+}
+
+.heroMedia {
+    position: relative;
+    display: flex;
+    padding-bottom: 94px;
+}
+
+.heroImgWrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 388px;
+    height: 488px;
+    background-color: #fe997b;
+    border-radius: 16px;
+    border: 3px solid #fff;
+}
+
+.heroContent {
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Không tìm thấy trang</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #f5f7fa;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 100px;
+      max-width: 1200px;
+      padding: 20px;
+    }
+    .text h1 {
+      font-size: 130px;
+      margin: 0;
+      color: #2d3748;
+      font-weight: 900;
+    }
+    .text p {
+      font-size: 20px;
+      color: #4a5568;
+      margin: 15px 0;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #4299e1;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 17px;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #3182ce; }
+
+    /* Dùng ảnh thật */
+    .illustration {
+      width: 380px;
+      animation: float 4s infinite ease-in-out;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-30px) rotate(3deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="text">
+      <h1>404</h1>
+      <p>Sorry we couldn't find this page.</p>
+      <p>Nhưng đừng lo, vẫn còn rất nhiều điều thú vị ở trang chủ!</p>
+      <a href="/" class="btn">← Back to homepage</a>
+    </div>
+
+    <!-- DÙNG ẢNH THẬT - chú chó nghịch bình hoa (GIF nhẹ 180KB) -->
+    <img src="https://i.ibb.co/ZxYnY1k/dog-vase-mischief.gif" 
+         alt="Chú chó nghịch bình hoa" 
+         class="illustration">
+
+    <!-- Nếu bạn thích ảnh tĩnh SVG siêu nét (chỉ 25KB) thì dùng cái này thay thế: -->
+    <!-- <img src="https://svgur.com/i/11y4.svg" class="illustration" alt="Chú chó nghịch ngợm"> -->
+  </div>
+
+</body>
+</html>

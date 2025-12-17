@@ -1,0 +1,84 @@
+.contactInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // flex-wrap: wrap;
+    gap: 20px;
+    background: #fafafa;
+    border-radius: 20px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    margin-top: 30px;
+}
+
+.contactWrapperLeft {
+    // width: 50%;
+    width: calc(100% / 2 - 10px);
+}
+.contactTitle {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.emailGroup,
+.phoneGroup,
+.addressGroup,
+.socialGroup {
+    margin-bottom: 20px;
+}
+
+.labelEmail,
+.labelPhone,
+.labelAdd,
+.labelSocial {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+}
+
+.contactDesc {
+    margin-top: 10px;
+    font-size: 1.4rem;
+    font-weight: 650;
+}
+
+.socialLabel {
+    //
+}
+
+.socialGroup {
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+}
+
+.socialList {
+    margin-top: 10px;
+    font-size: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    color: #000;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.contactWrapperRight {
+    // width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.InputTextArea {
+    width: 100%;
+    max-width: 200px;
+}

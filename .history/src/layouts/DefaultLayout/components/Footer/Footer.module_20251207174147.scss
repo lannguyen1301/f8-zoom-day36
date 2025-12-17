@@ -1,0 +1,30 @@
+.footer {
+    margin-top: 52px;
+    // background: linear-gradient(to right, #fff6ed 43%, transparent 42%);
+    background: #fff6ed;
+}
+
+.footerInner {
+    display: flex;
+}
+
+.footerLeft {
+    padding: 52px 0 48px 0;
+    width: 42%;
+}
+
+.footerRight {
+    flex: 1px;
+    padding: 52px 0 48px 0;
+}
+
+.footerList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer p {
+    text-align: center;
+    line-height: 50px;
+}

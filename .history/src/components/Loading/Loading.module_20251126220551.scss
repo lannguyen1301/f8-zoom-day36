@@ -1,0 +1,59 @@
+// Loader Circle
+.loaderCircle {
+    .loader {
+        width: 48px;
+        height: 48px;
+        display: inline-block;
+        position: relative;
+    }
+    .loader::after,
+    .loader::before {
+        content: "";
+        box-sizing: border-box;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        animation: animLoader 2s linear infinite;
+    }
+    .loader::after {
+        animation-delay: 1s;
+    }
+
+    @keyframes animLoader {
+        0% {
+            transform: scale(0);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 0;
+        }
+    }
+}
+
+// Loader Circle Point
+.loaderCirclePoint {
+    .loader {
+        width: 48px;
+        height: 48px;
+        border: 5px dotted #fff;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        animation: rotation 2s linear infinite;
+    }
+
+    @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}

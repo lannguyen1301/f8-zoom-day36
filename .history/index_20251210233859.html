@@ -1,0 +1,387 @@
+<!-- <!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>f8-zoom-day36</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navis - Consulting Firm</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #2563eb;
+      --dark: #111827;
+      --light: #f9fafb;
+      --gray: #6b7280;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: #fff;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Header */
+    header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color .3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .nav-buttons a {
+      padding: .6rem 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      margin-right: .8rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Hero / About Section */
+    .hero {
+      max-width: 1280px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-text p {
+      color: var(--gray);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .hero-buttons a {
+      padding: .9rem 1.8rem;
+      border-radius: 50px;
+      margin-right: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .stat h3 {
+      font-size: 3rem;
+      color: var(--dark);
+    }
+
+    .stat p {
+      color: var(--gray);
+      font-size: .95rem;
+    }
+    }
+
+    .hero-image {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Benefits section */
+    .benefits {
+      background: var(--light);
+      padding: 6rem 0;
+    }
+
+    .benefits .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .benefits-image {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .benefits-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-weight: 500;
+    }
+
+    .benefit-item i {
+      color: var(--primary);
+      font-size: 1.4rem;
+    }
+
+    /* Milestones */
+    .milestones {
+      padding: 6rem 0;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .milestones h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .milestones p {
+      color: var(--gray);
+      margin-bottom: 4rem;
+      max-width: 600px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .card-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+    }
+
+    @media (max-width: 968px) {
+
+      .hero,
+      .benefits .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-image,
+      .benefits-image {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .stats {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">Navis</div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">More Links ∨</a></li>
+        </ul>
+      </nav>
+      <div class="nav-buttons">
+        <a href="#" class="btn-outline">Sign up</a>
+        <a href="#" class="btn-primary">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero / About -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>About our firm</h1>
+      <p>
+        At our firm, we pride ourselves on delivering tailored solutions that empower businesses to thrive.
+        With years of experience across various industries, our dedicated team is committed to driving growth
+        and operational excellence.
+      </p>
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary">Get Started →</a>
+        <a href="#" class="btn-outline">Free trial</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <h3>95%</h3>
+          <p>Complete customer satisfaction</p>
+        </div>
+        <div class="stat">
+          <h3>10+</h3>
+          <p>Innovation and valuable insight</p>
+        </div>
+        <div class="stat">
+          <h3>$10m</h3>
+          <p>Highly efficient financial strategies</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1580489942398-784ebe1d0bb1?w=600" alt="Professional woman">
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="benefits">
+    <div class="container">
+      <div class="benefits-image">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600" alt="Business woman">
+      </div>
+
+      <div>
+        <h2>Unlock our expertise to drive success across industries.</h2>
+        <p style="margin-top:1rem; color:var(--gray);">
+          Leverage our deep industry knowledge and innovative strategies to accelerate your business growth.
+          Our tailored solutions ensure success across diverse sectors by addressing your unique challenges and
+          opportunities.
+        </p>
+
+        <div class="benefits-list">
+          <div class="benefit-item"><i class="fas fa-check-circle"></i> Measurable proven results</div>
+          <div class="benefit-item"><i class="fas fa-check-circle"></i> Innovative real solutions</div>
+          <div class="benefit-item"><i class="fas fa-check-circle"></i> Customized business strategies</div>
+          <div class="benefit-item"><i class="fas fa-check-circle"></i> Reliable expert guidance</div>
+          <div class="benefit-item"><i class="fas fa-check-circle"></i> Multi-industry expertise</div>
+          <div class="benefit-item"><i class="fas fa-check-circle"></i> Support for long-term</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Milestones -->
+  <section class="milestones">
+    <h2>Our journey: key milestones and achievements</h2>
+    <p>Discover the significant milestones that have shaped our firm. Each achievement reflects our commitment to
+      excellence and growth.</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>Technology Solutions (2008)</h3>
+        <p>Founded with a vision to transform businesses, we started our journey with the client project set the stage
+          for future successes.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Financial Consulting</h3>
+        <p>Expert guidance to optimize your financial performance.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-coins"></i></div>
+        <h3>Financial Consulting</h3>
+        <p>Expert guidance to optimize your financial performance.</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

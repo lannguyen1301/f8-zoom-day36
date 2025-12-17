@@ -1,0 +1,100 @@
+import { Link, NavLink } from "react-router";
+import "@styles/main.scss";
+import styles from "./AdminSidebar.module.scss";
+
+// Components
+import Section from "@ui/Section";
+import Div from "@ui/Div";
+import Title from "@ui/Title";
+import Footer from "@ui/Footer";
+import SubTitle from "@ui/SubTitle";
+import Para from "@ui/Para";
+import SubsectionTitle from "@ui/SubsectionTitle";
+import Aside from "@ui/Aside";
+import Img from "@ui/Img";
+import Logo from "@ui/Logo";
+import Nav from "@ui/Nav";
+import Span from "@ui/Span";
+import Ul from "@ui/Ul";
+import Li from "@ui/Li";
+
+const navItems = [
+    {
+        to: "/admin",
+        title: "Dashboard",
+        icon: "fa-solid fa-chart-pie",
+    },
+    {
+        to: "/admin/users",
+        title: "Users",
+        icon: "fa-solid fa-users",
+    },
+    {
+        to: "/admin/setting",
+        title: "Setting",
+        icon: "fa-solid fa-screwdriver-wrench",
+    },
+];
+
+function AdminSidebar() {
+    const renderNavItems = () => {
+        return navItems.map((item, index) => (
+            <Li key={index} className={styles.sidebarItem}>
+                <NavLink
+                    className={({ isActive }) =>
+                        isActive ? styles.active : styles.sidebarActionLink
+                    }
+                    to={item.to}
+                >
+                    <i className={item.icon}></i> {item.title}
+                </NavLink>
+            </Li>
+        ));
+    };
+    return (
+        <Aside className={styles.sidebar}>
+            <Nav>
+                <Ul className={styles.navigation}>{renderNavItems()}</Ul>
+            </Nav>
+            <Footer className={styles.footer}>
+                <SubTitle className={styles.footerHead}>
+                    Almeria<small>©</small>
+                </SubTitle>
+                <Div className={styles.footerCopyRight}>
+                    Almeria ©<br />
+                    All Rights Reserved 2021
+                </Div>
+            </Footer>
+        </Aside>
+    );
+}
+
+export default AdminSidebar;
+
+{
+    /* <Div className={styles.appBodyNavigation}>
+    <Nav className={styles.navigation}>
+        <Link to="/">
+            <i class="fa-solid fa-chart-pie"></i>
+            <Span>Dashboard</Span>
+        </Link>
+        <Link to="/">
+            <i class="fa-solid fa-users"></i>
+            <Span>Users</Span>
+        </Link>
+        <Link to="/">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <Span>Setting</Span>
+        </Link>
+    </Nav>
+    <Footer className={styles.footer}>
+        <SubTitle className={styles.footerHead}>
+            Almeria<small>©</small>
+        </SubTitle>
+        <Div className={styles.footerCopyRight}>
+            Almeria ©<br />
+            All Rights Reserved 2021
+        </Div>
+    </Footer>
+</Div>; */
+}

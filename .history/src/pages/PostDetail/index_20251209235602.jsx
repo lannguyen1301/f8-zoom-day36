@@ -1,0 +1,45 @@
+import { useParams, useNavigation } from "react-router";
+// useNavigation: Ý nghĩa: hook để theo dõi trạng thái điều hướng trong React Router. Nhiệm vụ: cung cấp thông tin về quá trình chuyển trang hoặc gửi form. Chức năng: giúp bạn hiển thị loading spinner, disable nút, hoặc tạo UI “optimistic” khi dữ liệu đang thay đổi.
+
+import { useState, useEffect } from "react";
+import { Link } from "react-router";
+import clsx from "clsx";
+
+// Styles Module
+import styles from "./PostDetail.module.scss";
+
+// Styles Global
+import "@styles/main.scss";
+
+// components
+import Loading from "@components/Loading";
+import LimitText from "@components/LimitText";
+import Pagination from "@components/Pagination";
+
+// ui
+import Section from "@ui/Section";
+import Div from "@ui/Div";
+import Title from "@ui/Title";
+import Para from "@ui/Para";
+import Ul from "@ui/Ul";
+import Li from "@ui/Li";
+import SubTitle from "@ui/SubTitle";
+import SubsectionTitle from "@ui/SubsectionTitle";
+
+function PostDetail() {
+    const params = useParams();
+    return (
+        <>
+            <main className="container">
+                <Section className={styles.postDetail}>
+                    <Title className={styles.titleDetail}>
+                        {post.title} Post Detail
+                    </Title>
+                    <Para className={styles.paraDetail}>{post.body}</Para>
+                </Section>
+                <Section className={styles.postComment}></Section>
+            </main>
+        </>
+    );
+}
+export default PostDetail;

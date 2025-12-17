@@ -1,0 +1,156 @@
+.privacy {
+    //
+}
+
+.privacyTitle {
+    //
+}
+
+//
+:root {
+    --primary: #2563eb;
+    --dark: #111827;
+    --gray: #6b7280;
+    --light: #f9fafb;
+    --border: #e5e7eb;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    color: var(--dark);
+    background: #fff;
+}
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Header đơn giản */
+header {
+    background: #fff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+.back-link {
+    color: var(--gray);
+    font-weight: 500;
+}
+.back-link i {
+    margin-right: 0.5rem;
+}
+
+/* Main content */
+.container {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.intro {
+    text-align: center;
+    color: var(--gray);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+/* Card List Style */
+.policy-list {
+    display: grid;
+    gap: 2rem;
+}
+.policy-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+.policy-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
+}
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+.card-content {
+    color: #4b5563;
+    font-size: 1.05rem;
+}
+.card-content ul {
+    margin: 1.5rem;
+    margin-top: 1rem;
+}
+.card-content li {
+    margin-bottom: 0.6rem;
+}
+
+/* Footer nhỏ */
+.footer-note {
+    text-align: center;
+    margin-top: 5rem;
+    padding: 2rem;
+    color: var(--gray);
+    font-size: 0.95rem;
+    border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.3rem;
+    }
+    .card-header {
+        padding: 1.5rem;
+    }
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+    }
+}

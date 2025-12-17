@@ -1,0 +1,100 @@
+/* header */
+.appHeader {
+    display: grid;
+    grid-template-columns:
+        minmax(min-content, 175px) minmax(max-content, 1fr)
+        minmax(max-content, 400px);
+    column-gap: 4rem;
+    align-items: flex-end;
+}
+
+.appHeaderNavigation {
+    @media (max-width: 1170px) {
+        display: none;
+    }
+}
+
+.logoStyle {
+    background: #fff;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.appHeaderActions {
+    display: flex;
+    align-items: center;
+}
+
+.appHeaderActionsButtons {
+    display: flex;
+    border-left: 1px solid var(--c-gray-600);
+    margin-left: 2rem;
+    padding-left: 2rem;
+}
+
+.appHeaderActionsButtons > * + * {
+    margin-left: 1rem;
+}
+
+.appHeaderMobile {
+    display: none;
+}
+
+// .navigation {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     color: var(--c-text-tertiary);
+// }
+
+// .navigation a {
+//     display: flex;
+//     align-items: center;
+//     text-decoration: none;
+//     transition: 0.25s ease;
+// }
+
+// .navigation a * {
+//     transition: 0.25s ease;
+// }
+
+// .navigation a i {
+//     margin-right: 0.75rem;
+//     font-size: 1.25em;
+//     flex-shrink: 0;
+// }
+
+// .navigation a + a {
+//     margin-top: 1.25rem;
+// }
+
+// .navigation a:hover,
+// .navigation a:focus {
+//     transform: translateX(4px);
+//     color: var(--c-text-primary);
+// }
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    color: var(--c-text-tertiary);
+    border-bottom: 1px solid var(--c-gray-600);
+}
+
+.tabs a {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-decoration: none;
+    border-top: 2px solid transparent;
+    display: inline-flex;
+    transition: 0.25s ease;
+}
+
+.tabs a.active,
+.tabs a:hover,
+.tabs a:focus {
+    color: var(--c-text-primary);
+    border-color: var(--c-text-primary);
+}

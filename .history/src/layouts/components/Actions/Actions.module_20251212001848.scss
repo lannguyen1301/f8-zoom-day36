@@ -1,0 +1,65 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerAction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.headerActionLink {
+    padding: 8px 18px;
+    text-align: center;
+    font-weight: 500;
+    // font-size: 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: #5e6085;
+}
+
+.headerActionLink {
+    // --height: 40px;
+    // height: var(--height);
+    min-width: 118px;
+    border: none;
+    border-radius: 999px;
+    font-weight: normal;
+}
+
+.headerActionLink:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-color: currentColor;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.headerActionBtn:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-color: currentColor;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+.active {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-color: currentColor;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+    padding: 8px 18px;
+    text-align: center;
+    font-weight: 500;
+    // font-size: 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1;
+    border-radius: 999px;
+}

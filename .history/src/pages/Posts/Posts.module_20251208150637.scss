@@ -1,0 +1,27 @@
+.info {
+    font-size: 1.2em;
+    display: flex;
+    padding: 1em 3em;
+    height: 3em;
+}
+
+.info .postImg {
+    height: 3em;
+    margin-right: 0.5em;
+}
+
+.info .postTitle {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.cardsWrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4rem;
+    padding: 4rem;
+    margin: 0 auto;
+    width: max-content;
+}

@@ -1,0 +1,15 @@
+import "@styles/main.scss";
+import styles from "./Privacy.module.scss";
+
+function Privacy() {
+    return (
+        <>
+            <Section className="container">
+                <Div className={styles.privacy}>
+                    <Title></Title>
+                </Div>
+            </Section>
+        </>
+    );
+}
+export default Privacy;

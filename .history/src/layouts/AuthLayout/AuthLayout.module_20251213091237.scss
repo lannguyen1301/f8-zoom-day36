@@ -1,0 +1,19 @@
+.wrapper {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 240px);
+}

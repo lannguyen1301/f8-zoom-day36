@@ -1,0 +1,234 @@
+Day 36: Bài tập về nhà 
+Cập nhật tháng 9 năm 2025
+
+#React Router Multiple Layouts & API Integration
+#Yêu cầu chung
+#Bài 1: Setup Multiple Layouts với React Router
+#Bài 2: Posts List với Pagination & API Integration
+#Bài 3: Post Detail với Comments
+#Bài 4: ScrollToTop Component
+#Bài 5: Contact & Privacy Pages
+#Deploy lên Github Pages
+#Lưu ý quan trọng
+#React Router Multiple Layouts & API Integration
+#Yêu cầu chung
+Tạo repo f8-zoom-day36 sử dụng Vite để tạo dự án React với template JavaScript + SWC
+Deploy bài tập trên Github Pages sử dụng gh-pages
+Code phải clean, dễ đọc, dễ hiểu
+Giao diện đơn giản nhưng rõ ràng (tự làm CSS, có thể dùng CSS/SCSS Modules)
+Mục tiêu chính: Nắm vững React Router với multiple layouts, nested routes, API integration với useEffect, và các hooks routing
+#Bài 1: Setup Multiple Layouts với React Router
+1.1. Cấu trúc thư mục
+Tạo cấu trúc thư mục theo kiểu folder-based:
+
+src/
+├── layouts/
+│   ├── components/ # Components dùng chung cho nhiều layouts
+│   │   └── Header/
+│   │       ├── index.jsx
+│   │       └── Header.module.scss
+│   ├── DefaultLayout/
+│   │   ├── components/ # Components riêng của DefaultLayout
+│   │   │   └── Footer/
+│   │   │       ├── index.jsx
+│   │   │       └── Footer.module.scss
+│   │   ├── index.jsx
+│   │   └── DefaultLayout.module.scss
+│   ├── AuthLayout/
+│   │   ├── components/ # Components riêng của AuthLayout
+│   │   │   └── AuthSidebar/
+│   │   │       ├── index.jsx
+│   │   │       └── AuthSidebar.module.scss
+│   │   ├── index.jsx
+│   │   └── AuthLayout.module.scss
+│   └── AdminLayout/
+│       ├── components/ # Components riêng của AdminLayout
+│       │   ├── AdminSidebar/
+│       │   │   ├── index.jsx
+│       │   │   └── AdminSidebar.module.scss
+│       │   └── AdminFooter/
+│       │       ├── index.jsx
+│       │       └── AdminFooter.module.scss
+│       ├── index.jsx
+│       └── AdminLayout.module.scss
+├── pages/
+│   ├── Home/
+│   │   ├── index.jsx
+│   │   └── Home.module.scss
+│   ├── About/
+│   │   ├── index.jsx
+│   │   └── About.module.scss
+│   ├── Posts/
+│   │   ├── index.jsx
+│   │   └── Posts.module.scss
+│   ├── PostDetail/
+│   │   ├── index.jsx
+│   │   └── PostDetail.module.scss
+│   ├── Login/
+│   │   ├── index.jsx
+│   │   └── Login.module.scss
+│   ├── Register/
+│   │   ├── index.jsx
+│   │   └── Register.module.scss
+│   ├── Dashboard/
+│   │   ├── index.jsx
+│   │   └── Dashboard.module.scss
+│   ├── Users/
+│   │   ├── index.jsx
+│   │   └── Users.module.scss
+│   ├── Settings/
+│   │   ├── index.jsx
+│   │   └── Settings.module.scss
+│   ├── NotFound/
+│   │   ├── index.jsx
+│   │   └── NotFound.module.scss
+│   ├── Contact/
+│   │   ├── index.jsx
+│   │   └── Contact.module.scss
+│   └── Privacy/
+│       ├── index.jsx
+│       └── Privacy.module.scss
+├── components/
+│   ├── AppRoutes/
+│   │   └── index.jsx
+│   ├── ScrollToTop/
+│   │   └── index.js
+│   ├── Loading/
+│   │   ├── index.jsx
+│   │   └── Loading.module.scss
+│   └── Pagination/
+│       ├── index.jsx
+│       └── Pagination.module.scss
+└── App.jsx
+1.2. Yêu cầu Layout
+DefaultLayout (/src/layouts/DefaultLayout/index.jsx):
+
+Sử dụng component Header chung từ /src/layouts/components/Header
+Có component Footer riêng chỉ dùng cho layout này
+Áp dụng cho các pages: Home (/), About (/about), Posts (/posts), PostDetail (/posts/:id), Contact (/contact), Privacy (/privacy)
+Sử dụng <Outlet /> từ react-router để render các pages con
+AuthLayout (/src/layouts/AuthLayout/index.jsx):
+
+Sử dụng component Header chung từ /src/layouts/components/Header
+Có AuthSidebar riêng hiển thị bên trái với các link: “Đăng nhập”, “Đăng ký”, “Quên mật khẩu”
+Không có Footer
+Áp dụng cho các pages: Login (/login), Register (/register)
+Sử dụng <Outlet /> từ react-router để render các pages con
+AdminLayout (/src/layouts/AdminLayout/index.jsx):
+
+Không dùng Header chung mà có header riêng
+Có AdminSidebar với menu: Dashboard, Quản lý Users, Cài đặt
+Có AdminFooter riêng
+Áp dụng cho các pages: Dashboard (/admin), Users (/admin/users), Settings (/admin/settings)
+Sử dụng <Outlet /> từ react-router để render các pages con
+Pages không có layout:
+
+Áp dụng cho page: NotFound (*) - Tức page này không dùng lại các layout trên, mà một mình nó tự có layout riêng (code trong src/pages/NotFound/).
+Tại sao sử dụng path * cho page NotFound?
+
+Bởi path này sẽ match với bất kỳ URL nào không được định nghĩa trong các routes khác. React Router sẽ tự động hiển thị component NotFound khi user truy cập vào một URL không tồn tại. Ví dụ: khi user vào /xyz hoặc /something/not/exist, React Router không tìm thấy route nào match, nó sẽ fallback về route với path * và render NotFound component.
+
+1.3. Cấu hình Routes trong AppRoutes
+Tại file /src/components/AppRoutes/index.jsx, sử dụng nested routes với Outlet để setup các layouts và pages tương ứng. Hãy tự nghiên cứu cách sử dụng:
+
+<Route element={<SomeLayout />}> để wrap layout
+<Route index> để định nghĩa trang mặc định của một route cha
+<Route path="*"> để handle 404
+Nested routes để tạo cấu trúc layout > pages
+#Bài 2: Posts List với Pagination & API Integration
+2.1. Posts Page (/src/pages/Posts/index.jsx)
+Yêu cầu:
+
+Sử dụng useEffect để gọi API: https://jsonplaceholder.typicode.com/posts
+Hiển thị 20 posts/page
+Implement pagination component với các tính năng:
+Hiển thị các số trang
+Highlight trang hiện tại
+Nút Previous/Next
+URL phải có param ?page=1, ?page=2… sử dụng useSearchParams
+Khi đang load data hiển thị component Loading
+2.2. Pagination Component (/src/components/Pagination/index.jsx)
+Props cần thiết:
+
+currentPage (number): Trang hiện tại đang active
+totalPages (number): Tổng số trang có thể navigate
+onPageChange (function): Callback được gọi khi user click vào một trang khác, nhận vào số trang mới làm tham số
+Yêu cầu component:
+
+Có nút “First” để về trang 1, “Last” để tới trang cuối
+Có nút “Previous” để về trang trước, “Next” để tới trang sau
+Hiển thị các số trang để user có thể click trực tiếp
+Disable logic cho các nút:
+Nút “First” và “Previous”: disabled (không click được và style mờ đi) khi đang ở trang 1
+Nút “Last” và “Next”: disabled (không click được và style mờ đi) khi đang ở trang cuối cùng
+Các nút số trang: trang hiện tại phải có style khác biệt (highlight/active) và không click được
+#Bài 3: Post Detail với Comments
+3.1. PostDetail Page (/src/pages/PostDetail/index.jsx)
+Yêu cầu:
+
+Sử dụng useParams để lấy id từ URL
+Gọi 2 API:
+Post detail: https://jsonplaceholder.typicode.com/posts/:id
+Comments: https://jsonplaceholder.typicode.com/posts/:id/comments
+Hiển thị loading khi đang tải
+Nếu post không tồn tại (API trả về 404), sử dụng useNavigate với option replace: true để chuyển về /posts. Option replace: true giúp thay thế history entry hiện tại thay vì thêm mới, tránh user bấm back lại vào trang lỗi.
+Hiển thị thông tin post: title, body, userId
+Bên dưới hiển thị danh sách comments với: name, email, body
+#Bài 4: ScrollToTop Component
+4.1. Component ScrollToTop (/src/components/ScrollToTop/index.js)
+Vấn đề cần giải quyết:
+
+Khi ở page Contact, scroll xuống footer
+Click link sang page Privacy
+Page mới vẫn giữ vị trí scroll cũ (không scroll lên top)
+Yêu cầu:
+
+Tạo component ScrollToTop sử dụng useLocation và useEffect
+Mỗi khi route thay đổi (pathname thay đổi), tự động scroll lên đầu trang
+Import và sử dụng trong AppRoutes.jsx
+Component này không render gì cả (return null)
+#Bài 5: Contact & Privacy Pages
+Yêu cầu:
+
+Tạo 2 pages với nhiều nội dung text (có thể dùng “Lorem”)
+Đảm bảo nội dung đủ dài để có thanh cuộn dọc xuất hiện
+Đặt links tới 2 pages này trong Footer của DefaultLayout
+Test ScrollToTop component hoạt động khi chuyển giữa 2 pages này
+#Deploy lên Github Pages
+Làm theo hướng dẫn từ bài tập trước với HashRouter để tránh lỗi 404 khi refresh trang trên Github Pages.
+
+#Lưu ý quan trọng
+Focus chính của bài tập:
+
+Hiểu và sử dụng thành thạo nested routes với layouts
+Biết cách tổ chức folder structure cho multiple layouts
+Thành thạo các hooks: useEffect, useState, useParams, useSearchParams, useNavigate, useLocation
+Xử lý API với loading states và error handling
+Không cần quá chú trọng vào UI đẹp, chỉ cần clean và dễ nhìn. Thời gian nên dành cho việc hiểu logic và cấu trúc code.
+
+Test kỹ các tính năng:
+
+Pagination giữ được state khi F5
+ScrollToTop hoạt động khi chuyển trang
+404 redirect hoạt động đúng
+Các layouts hiển thị đúng components
+Clean code:
+
+Tách components nhỏ, tái sử dụng
+Đặt tên rõ ràng, nhất quán
+Comment giải thích ở những chỗ phức tạp
+Tip: Bắt đầu với việc setup layouts và routes trước. Sau đó làm từng phần: pagination -> post detail -> scroll to top. Deploy sớm để test trên Github Pages.
+
+
+
+Home: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M160-160v-375l-72 55-47-63 439-337 440 336-48 64-392-300-240 184v356h160v80H160Zm540 95q-42 29-92.5 24.5T521-81q-36-36-40.5-86.5T505-260q-29-42-24.5-92.5T521-439q36-36 86.5-40.5T700-455q42-29 92.5-24.5T879-439q36 36 40.5 86.5T895-260q29 42 24.5 92.5T879-81q-36 36-86.5 40.5T700-65Zm0-98 46 32q18 13 39 11t37-18q16-16 18-37t-11-39l-32-46 32-46q13-18 11-39t-18-37q-16-16-37-18t-39 11l-46 32-46-32q-18-13-39-11t-37 18q-16 16-18 37t11 39l32 46-32 46q-13 18-11 39t18 37q16 16 37 18t39-11l46-32Zm0-47q21 0 35.5-14.5T750-260q0-21-14.5-35.5T700-310q-21 0-35.5 14.5T650-260q0 21 14.5 35.5T700-210ZM480-470Zm220 210Z"/></svg>
+About: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+Posts: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M120-120v-720h720v720H120Zm600-160H240v60h480v-60Zm-480-60h480v-60H240v60Zm0-140h480v-240H240v240Zm0 200v60-60Zm0-60v-60 60Zm0-140v-240 240Zm0 80v-80 80Zm0 120v-60 60Z"/></svg>
+Login: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/></svg>
+Register: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M680-240v-80h200v80H680Zm-80-200v-80h280v80H600Zm-80-200v-80h360v80H520ZM320-480q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM80-240v-76q0-21 10-40t28-30q45-27 95.5-40.5T320-440q56 0 106.5 13.5T522-386q18 11 28 30t10 40v76H80Zm240-120q-41 0-80 10t-74 30h308q-35-20-74-30t-80-10Zm0-200q17 0 28.5-11.5T360-600q0-17-11.5-28.5T320-640q-17 0-28.5 11.5T280-600q0 17 11.5 28.5T320-560Zm0-40Zm0 280Z"/></svg>
+Dashboard: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M120-840h320v320H120v-320Zm80 80v160-160Zm320-80h320v320H520v-320Zm80 80v160-160ZM120-440h320v320H120v-320Zm80 80v160-160Zm440-80h80v120h120v80H720v120h-80v-120H520v-80h120v-120Zm-40-320v160h160v-160H600Zm-400 0v160h160v-160H200Zm0 400v160h160v-160H200Z"/></svg>
+Users: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M0-240v-63q0-43 44-70t116-27q13 0 25 .5t23 2.5q-14 21-21 44t-7 48v65H0Zm240 0v-65q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v65H240Zm540 0v-65q0-26-6.5-49T754-397q11-2 22.5-2.5t23.5-.5q72 0 116 26.5t44 70.5v63H780Zm-455-80h311q-10-20-55.5-35T480-370q-55 0-100.5 15T325-320ZM160-440q-33 0-56.5-23.5T80-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T160-440Zm640 0q-33 0-56.5-23.5T720-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T800-440Zm-320-40q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm0-80q17 0 28.5-11.5T520-600q0-17-11.5-28.5T480-640q-17 0-28.5 11.5T440-600q0 17 11.5 28.5T480-560Zm1 240Zm-1-280Z"/></svg>
+Settings: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-480ZM370-80l-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-74 56q-22-11-45-18.5T714-558l63-48-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q17 17 36.5 30.5T400-275q1 57 23.5 107T484-80H370Zm41-279q6-20 14.5-38.5T445-433q-11-8-17-20.5t-6-26.5q0-25 17.5-42.5T482-540q14 0 27 6.5t21 17.5q17-11 35-19.5t38-13.5q-18-32-50-51.5T482-620q-59 0-99.5 41T342-480q0 38 18.5 70.5T411-359Zm269 199 120-120-120-120-28 28 72 72H560v40h163l-71 72 28 28Zm0 80q-83 0-141.5-58.5T480-280q0-83 58.5-141.5T680-480q83 0 141.5 58.5T880-280q0 83-58.5 141.5T680-80Z"/></svg>
+NotFound: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M200-800v640-640 200-200Zm80 400h147q11-23 25.5-43t32.5-37H280v80Zm0 160h123q-3-20-3-40t3-40H280v80ZM200-80q-33 0-56.5-23.5T120-160v-640q0-33 23.5-56.5T200-880h320l240 240v92q-19-6-39-9t-41-3v-40H480v-200H200v640h227q11 23 25.5 43T485-80H200Zm480-400q83 0 141.5 58.5T880-280q0 83-58.5 141.5T680-80q-83 0-141.5-58.5T480-280q0-83 58.5-141.5T680-480Zm0 320q11 0 18.5-7.5T706-186q0-11-7.5-18.5T680-212q-11 0-18.5 7.5T654-186q0 11 7.5 18.5T680-160Zm-18-76h36v-10q0-11 6-19.5t14-16.5q14-12 22-23t8-31q0-29-19-46.5T680-400q-23 0-41.5 13.5T612-350l32 14q3-12 12.5-21t23.5-9q15 0 23.5 7.5T712-336q0 11-6 18.5T692-302q-6 6-12.5 12T668-276q-3 6-4.5 12t-1.5 14v14Z"/></svg>
+Contact: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M80-120q-33 0-56.5-23.5T0-200v-560q0-33 23.5-56.5T80-840h800q33 0 56.5 23.5T960-760v560q0 33-23.5 56.5T880-120H80Zm556-80h244v-560H80v560h4q42-75 116-117.5T360-360q86 0 160 42.5T636-200ZM360-400q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm400 160 80-80-60-80h-66q-6-18-10-38.5t-4-41.5q0-21 4-40.5t10-39.5h66l60-80-80-80q-54 42-87 106.5T640-480q0 69 33 133.5T760-240Zm-578 40h356q-34-38-80.5-59T360-280q-51 0-97 21t-81 59Zm178-280q-17 0-28.5-11.5T320-520q0-17 11.5-28.5T360-560q17 0 28.5 11.5T400-520q0 17-11.5 28.5T360-480Zm120 0Z"/></svg>
+Privacy: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v227q-19-8-39-14.5t-41-9.5v-147l-240-90-240 90v188q0 47 12.5 94t35 89.5Q310-290 342-254t71 60q11 32 29 61t41 52q-1 0-1.5.5t-1.5.5Zm200 0q-83 0-141.5-58.5T480-280q0-83 58.5-141.5T680-480q83 0 141.5 58.5T880-280q0 83-58.5 141.5T680-80ZM480-494Zm180 334h40v-100h100v-40H700v-100h-40v100H560v40h100v100Z"/></svg>
